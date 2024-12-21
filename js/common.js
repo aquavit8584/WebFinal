@@ -13,7 +13,7 @@ function checkLoginStatus() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   if (isLoggedIn !== "true") {
     // 未登入導向登入頁面
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 }
 

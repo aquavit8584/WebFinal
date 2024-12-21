@@ -19,15 +19,16 @@ registerForm.addEventListener("submit", (e) => {
   const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
   if (!username || !password || !confirmPassword || password !== confirmPassword) {
+    alert("所有欄位均為必填，且密碼需一致！");
     registerErrorMessage.style.display = "block";
     return;
   }
-  registerErrorMessage.style.display = "none";
 
   let userList = getUserList(); // from common.js
   const isExist = userList.some(u => u.username === username);
   if (isExist) {
-    alert("該使用者已存在，請使用其他帳號");
+    alert("該使用者已存在，請使用其他帳號！");
+    registerErrorMessage.textContent = "該使用者已存在，請使用其他帳號！"; // 更新錯誤訊息文字
     return;
   }
 
@@ -56,7 +57,6 @@ loginForm.addEventListener("submit", (e) => {
     loginErrorMessage.style.display = "block";
     return;
   }
-  loginErrorMessage.style.display = "none";
 
   const userList = getUserList();
   const currentUser = userList.find(u => u.username === username && u.password === password);
@@ -69,6 +69,7 @@ loginForm.addEventListener("submit", (e) => {
     window.location.href = "settings.html";
   } else {
     alert("帳號或密碼錯誤！");
+    loginErrorMessage.textContent = "帳號或密碼錯誤！"; // 更新錯誤訊息文字
   }
 });
 

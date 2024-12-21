@@ -10,11 +10,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 綁定樣式按鈕
   const styleMap = {
+    darkStyle: "dark",
+    lightStyle: "light",
     pinkStyle: "pink",
     blueStyle: "blue",
     lightGreenStyle: "lightGreen",
-    darkStyle: "dark",
-    lightStyle: "light",
   };
   Object.entries(styleMap).forEach(([btnId, styleKey]) => {
     const btn = document.getElementById(btnId);
@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
     alert("已登出！");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   });
 
   // 前往柏青哥
