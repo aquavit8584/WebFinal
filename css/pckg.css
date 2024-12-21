@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#gameCanvas {
+  flex: 0 0 500px;
+  height: 800px;
+  border: 3px solid white;
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+#scorePanel {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 10px;
+  background-color: #222;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+#scorePanel table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#scorePanel td {
+  border: 2px solid white;
+  padding: 10px;
+}
+
+#ballSpeedContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+#exchangeButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+#exchangeButtons button {
+  flex: 1;
+}
+
+.lobby {
+  padding: 20px 40px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lobby:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #gameCanvas {
+    width: 90%;
+    height: auto;
+  }
+  #scorePanel {
+    width: 90%;
+  }
+}

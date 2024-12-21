@@ -1,0 +1,31 @@
+.form-container {
+  width: 400px;
+  padding: 30px 40px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-container .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 10px;
+  display: none;
+}
+
+.form-container .footer {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.form-container .footer a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.form-container .footer a:hover {
+  text-decoration: underline;
+}
