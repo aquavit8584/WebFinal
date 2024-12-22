@@ -8,6 +8,9 @@ let winnerPaid = 0;
 const maxCoinPlayed = 10;
 const reelSymbols = ["7", "A", "K", "Q", "J", "♠", "♥", "♣", "♦"];
 
+// 設置音效
+const spinSound = document.getElementById("spin-sound");
+
 function updateStatus() {
   document.getElementById("credits").textContent = getCurrentScore();
   document.getElementById("coin-played").textContent = coinPlayed;
@@ -15,6 +18,9 @@ function updateStatus() {
 }
 
 function spinReels() {
+  const winMessage = document.getElementById("win-message");
+  winMessage.classList.remove('show'); // 移除顯示的類別
+
   const curScore = getCurrentScore();
   if (curScore < coinPlayed) {
     alert("點數不足！");
@@ -25,6 +31,9 @@ function spinReels() {
   deductScore(coinPlayed);
   updateStatus();
 
+  // 播放旋轉音效
+  spinSound.play();
+
   const reelElements = [
     document.getElementById("reel1"),
     document.getElementById("reel2"),
@@ -32,7 +41,7 @@ function spinReels() {
   ];
 
   const finalSymbols = [];
-  const isWin = Math.random() < 0.01; // 1% 中獎
+  const isWin = Math.random() < 0.2; // 中獎率
 
   if (isWin) {
     const wSymbol = reelSymbols[Math.floor(Math.random() * reelSymbols.length)];
@@ -78,8 +87,13 @@ function spinReels() {
 function checkWin(finalSymbols) {
   const [s1, s2, s3] = finalSymbols;
   if (s1 === s2 && s2 === s3) {
-    winnerPaid = coinPlayed * 5;
+    winnerPaid = coinPlayed * 3;
     addScore(winnerPaid);
+
+    // 顯示「恭喜」訊息
+    const winMessage = document.getElementById("win-message");
+    winMessage.textContent = '恭喜！中獎了！';
+    winMessage.classList.add('show'); // 顯示訊息
   } else {
     winnerPaid = 0;
   }
@@ -110,6 +124,10 @@ function setupEventListeners() {
 
   document.getElementById("lobby").addEventListener("click", () => {
     window.location.href = "settings.html";
+  });
+
+  document.getElementById("leaderboard").addEventListener("click", () => {
+    window.location.href = "leaderboard.html";
   });
 }
 

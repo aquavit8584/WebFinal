@@ -22,6 +22,9 @@
   <div class="main-content">
     <div class="container">
       <div class="slot-machine">
+
+        <div id="win-message" class="win-message"></div>
+
         <div class="reels">
           <div class="reel" id="reel1">7</div>
           <div class="reel" id="reel2">7</div>
@@ -33,15 +36,24 @@
           <div>Coin Played: <span id="coin-played"></span></div>
         </div>
         <div class="buttons">
-          <button id="lobby" class="lobby">LOBBY</button>
-          <button id="bet-one">Bet One</button>
-          <button id="bet-max">Bet Max</button>
-          <button id="bet-minus">Bet Minus</button>
-          <button id="spin">Spin Reels</button>
-        </div>
+          <div class="game-buttons">
+            <button id="bet-minus">Bet Minus</button>
+            <button id="bet-one">Bet One</button>
+            <button id="bet-max">Bet Max</button>
+            <button id="spin">Spin Reels</button>
+          </div>
+          <hr class="divider">
+          <div class="gotobuttons">
+            <button id="lobby" class="goto-lobby-leaderboard">LOBBY</button>
+            <button id="leaderboard" class="goto-lobby-leaderboard">LEADERBOARD</button>
+          </div>
+        </div>        
       </div>
     </div>
   </div>
+
+  <audio id="spin-sound" src="sound/slot-spin-sound.mp3" preload="auto"></audio>
+
   <script src="js/common.js"></script>
   <script src="js/slot.js"></script>
   <script>

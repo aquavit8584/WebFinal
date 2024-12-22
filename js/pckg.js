@@ -286,3 +286,8 @@ window.addEventListener("DOMContentLoaded", () => {
 document.getElementById("lobby").addEventListener("click", () => {
   window.location.href = "settings.html";
 });
+
+// 前往分數榜
+document.getElementById("leaderboard").addEventListener("click", () => {
+  window.location.href = "leaderboard.html";
+});

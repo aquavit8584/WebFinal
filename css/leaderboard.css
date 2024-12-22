@@ -1,4 +1,6 @@
 .container {
+  border: 3px solid #ff6600; /* 橘色邊框 */
+  border-radius: 8px; /* 圓角邊框 */
   max-width: 800px;
   margin: 20px auto;
   background: white;
@@ -40,4 +42,26 @@ table tbody tr:nth-child(odd) {
 
 table tbody tr:nth-child(even) {
   background-color: #fff;
+}
+
+.leaderboard-buttons {
+  display: flex;
+  justify-content: center; /* 按鈕置中 */
+  gap: 20px; /* 按鈕之間的間距 */
+  margin-top: 20px; /* 按鈕與表格之間的間距 */
+}
+
+.leaderboard-buttons button {
+  padding: 15px 30px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #ff9900, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.leaderboard-buttons button:hover {
+  background: linear-gradient(45deg, #ff6600, #cc5200);
 }

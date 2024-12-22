@@ -151,9 +151,9 @@ table td, table th {
 .hamburger {
   position: fixed;
   top: 15px;
-  left: 15px;
+  left: 10px;
   font-size: 24px;
-  color: white;
+  color: #ff9900;
   cursor: pointer;
   z-index: 2000;
   transition: transform 0.3s ease;

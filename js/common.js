@@ -151,7 +151,7 @@ function saveStyleToLocalStorage(styleKey) {
 }
 
 function loadStyleFromLocalStorage() {
-  const styleKey = localStorage.getItem("selectedStyle") || "light";
+  const styleKey = localStorage.getItem("selectedStyle") || "dark";
   return stylePresets[styleKey];
 }
 
