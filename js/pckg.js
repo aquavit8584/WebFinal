@@ -209,11 +209,11 @@ function updateBall(ball) {
   if (ball.y + ball.radius > gameCanvas.height) {
     catchers.forEach(c => {
       if (ball.x > c.x && ball.x < c.x + c.width) {
-        addScore(c.points);
-        addParticles(ball.x, gameCanvas.height - 10, "255,165,0");
+        addScore(c.points); // 增加對應分數
+        addParticles(ball.x, gameCanvas.height - 10, "255,165,0"); // 增加粒子效果
       }
     });
-    balls.splice(balls.indexOf(ball), 1);
+    balls.splice(balls.indexOf(ball), 1); // 移除球
     updateDisplay();
     return;
   }
@@ -224,19 +224,21 @@ function updateBall(ball) {
     const distY = ball.y - peg.y;
     const distance = Math.sqrt(distX * distX + distY * distY);
     if (distance < ball.radius + peg.radius) {
+      // 碰撞邏輯
+
       const overlap = ball.radius + peg.radius - distance;
       const angle = Math.atan2(distY, distX);
       // 分離
       ball.x += Math.cos(angle) * overlap * 0.5;
       ball.y += Math.sin(angle) * overlap * 0.5;
 
-      const elasticity = 0.8;
+      const elasticity = 0.8; // 彈性系數
       const normalX = distX / distance;
       const normalY = distY / distance;
       const dotProduct = ball.dx * normalX + ball.dy * normalY;
       ball.dx -= 2 * dotProduct * normalX * elasticity;
       ball.dy -= 2 * dotProduct * normalY * elasticity;
-      ball.dx += (Math.random() - 0.5) * 0.5;
+      ball.dx += (Math.random() - 0.5) * 0.5; // 隨機偏移
 
       addParticles(ball.x, ball.y, "255,255,255");
     }

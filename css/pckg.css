@@ -89,7 +89,8 @@
   background: linear-gradient(45deg, #ff6600, #cc5200);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* RWD響應式設定 */
+  
   .container {
     flex-direction: column;
     align-items: center;
