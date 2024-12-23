@@ -41,15 +41,13 @@ function spinReels() {
   ];
 
   const finalSymbols = [];
-
   const isWin = Math.random() < 0.2; // 中獎率
 
-  if (isWin) { //中獎符號
+  if (isWin) {
     const wSymbol = reelSymbols[Math.floor(Math.random() * reelSymbols.length)];
     finalSymbols.push(wSymbol, wSymbol, wSymbol);
   } else {
-
-    // 非中獎組合 隨機三個不同符號
+    // 隨機三個不同符號
     while (finalSymbols.length < 3) {
       const s = reelSymbols[Math.floor(Math.random() * reelSymbols.length)];
       if (!finalSymbols.includes(s)) {
