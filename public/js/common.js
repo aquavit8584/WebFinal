@@ -7,7 +7,7 @@
  *   4) 漢堡選單控制
  *   5) 排行榜取得
  ********************************************/
-const apiBaseUrl = "https://webfinal-0j2o.onrender.com/"; // 或使用雲端部署的後端 URL
+const apiBaseUrl = "https://webfinal-0j2o.onrender.com"; // 或使用雲端部署的後端 URL
 
 // 獲取用戶列表
 async function fetchUserList() {
